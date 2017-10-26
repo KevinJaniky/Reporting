@@ -1,0 +1,38 @@
+#index {
+  height: 100%;
+  background: url('../media/background.jpg');
+  background-size:cover;
+  .content {
+    width: 400px;
+    padding: 20px;
+    background: #e7e7e7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+
+    h1 {
+      text-transform: uppercase;
+      color: #666;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .form-group {
+      label {
+        display: none;
+      }
+      input {
+        height: 55px;
+        font-size: 19px;
+        text-align: center;
+
+        &[type='submit']{
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+      }
+
+    }
+  }
+}
