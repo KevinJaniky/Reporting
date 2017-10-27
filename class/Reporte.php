@@ -51,4 +51,10 @@ class Reporte
         return $this->_error;
     }
 
+    public function readToday(){
+        $d = date('Y-m-d 00:00:00');
+        $query = $this->_bdd->query('SELECT * FROM reporte WHERE date = "'.$d.'"');
+        return $query->fetchAll();
+
+    }
 }

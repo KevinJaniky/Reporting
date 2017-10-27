@@ -7,7 +7,6 @@ require_once 'head.php';
     <div class="row">
         <div class="col marginTop">
             <?php
-            var_dump($_SESSION);
                 if(isset($_SESSION['error_reporting'])){
                     echo '<div class="alert alert-danger" role="alert">'.$_SESSION['error_reporting'].'</div>';
                     unset($_SESSION['error_reporting']);
@@ -44,14 +43,17 @@ require_once 'head.php';
         <div class="col marginTop">
             <h5 class="text-center text-uppercase">Reporting de la journée</h5>
             <div class="resumeDay">
-
+                <?php
+                    $d = new Reporte();
+                    var_dump($d->readToday());
+                ?>
             </div>
         </div>
     </div>
 
 </div>
 
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <?php
 require_once 'footer.php';
 ?>
-<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
