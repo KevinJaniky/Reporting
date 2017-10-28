@@ -1,0 +1,42 @@
+#list {
+  .items {
+    .title {
+      width: 100%;
+      text-align: center;
+      font-family: 'Saira Extra Condensed', sans-serif;
+      font-size: 20px;
+      margin: 10px;
+      border-bottom: 1px solid;
+      color: #666;
+      padding-bottom: 10px;
+    }
+    .panel-group {
+      width: 100%;
+      .content-resume{
+        background: rgb(227, 227, 227);
+        padding: 10px 20px;
+      }
+      .panel-title {
+        display: flex;
+        width: 100%;
+        background: #025aa5;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+
+        >a {
+          flex: 3;
+          color: white;
+          text-transform: uppercase;
+          text-decoration: none;
+          padding: 10px;
+          border-right: 5px solid;
+        }
+        >div {
+          flex:1;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

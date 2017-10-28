@@ -1,6 +1,6 @@
 <?php
 
-class Compétences
+class Competences
 {
 
     private $_bdd;

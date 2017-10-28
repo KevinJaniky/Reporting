@@ -56,7 +56,9 @@ class Deployement
               `id` int(11) NOT NULL,
               `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
               `competence` int(11) NOT NULL,
-              `commentaire` text NOT NULL
+              `commentaire` text NOT NULL,
+              `titre` varchar(255) NOT NULL,
+              `who` int(11) NOT NULL
             ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
         ");
 

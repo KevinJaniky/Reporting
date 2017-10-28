@@ -2,7 +2,7 @@
 require_once 'autoload.php';
 $user = new User();
 
-if (!$user->isAdmin()) {
+if (!$user->isConnected()) {
 
     if (isset($_POST['identifiant']) && isset($_POST['mdp'])) {
         $id = $_POST['identifiant'];

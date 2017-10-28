@@ -7,6 +7,7 @@ class Reporte
     private $_date;
     private $_competence;
     private $_commentaire;
+    private $_titre;
     private $_error = '';
 
     public function __construct()
@@ -23,7 +24,7 @@ class Reporte
     public function setDate($date)
     {
         $d = date('Y-m-d H:i:s', strtotime($date));
-         return $this->_date = $d;
+        return $this->_date = $d;
         //return $this->_error = 'Date non conforme';
     }
 
@@ -42,19 +43,44 @@ class Reporte
         return $this->_error = 'Commentaire trop court';
     }
 
-    public function create()
+    public function setTitre($titre)
+    {
+        if (strlen($titre) > 5) {
+            return $this->_titre = $titre;
+        }
+        return $this->_error = 'Titre trop court';
+    }
+
+    public function create($id)
     {
         if (empty($this->_error)) {
-            $this->_bdd->query('INSERT INTO reporte(date, competence,commentaire) VALUES ("'.$this->_date.'",'.$this->_competence.',"'.$this->_commentaire.'" )');
+            $this->_bdd->query('INSERT INTO reporte(date, competence,commentaire,titre,who) VALUES (
+                                "' . $this->_date . '",
+                                 ' . $this->_competence . ',
+                                "' . $this->_commentaire . '", 
+                                "' . $this->_titre . '",
+                                '.$id.'
+                                 
+                                 )');
             return true;
         }
         return $this->_error;
     }
 
-    public function readToday(){
+    public function readToday()
+    {
         $d = date('Y-m-d 00:00:00');
-        $query = $this->_bdd->query('SELECT * FROM reporte WHERE date = "'.$d.'"');
+        $query = $this->_bdd->query('SELECT * FROM reporte WHERE date = "' . $d . '"');
         return $query->fetchAll();
+    }
 
+    public function deleteOne($id)
+    {
+        $this->_bdd->query('DELETE FROM reporte WHERE id =' . $id);
+    }
+
+    public function readAll(){
+        $query = $this->_bdd->query('SELECT * FROM reporte ORDER BY date');
+        return $query->fetchAll();
     }
 }

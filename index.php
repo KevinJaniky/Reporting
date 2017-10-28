@@ -1,6 +1,10 @@
 <?php
 require_once 'autoload.php';
-
+$user = new User();
+if ($user->isConnected()) {
+    header('location:dashboard.php');
+    die();
+}
 ?>
 
 <!DOCTYPE html>

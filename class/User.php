@@ -26,7 +26,7 @@ class User
         return $query;
     }
 
-    public function isAdmin()
+    public function isConnected()
     {
         if (isset($_SESSION['connected'])) {
             if ($_SESSION['connected'] === true)

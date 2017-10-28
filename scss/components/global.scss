@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Saira+Extra+Condensed:800');
 * {
   margin: 0;
   padding:0;
   box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 html{
   height:100%;
@@ -11,7 +13,10 @@ html{
 }
 h1{
   margin-top: 20px;
+  font-family: 'Saira Extra Condensed', sans-serif;
 }
 .marginTop{
   margin-top:20px;
 }
+
+
