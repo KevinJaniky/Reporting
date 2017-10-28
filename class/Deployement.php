@@ -64,6 +64,53 @@ class Deployement
 
         $this->_bdd->query('ALTER TABLE `reporte` ADD PRIMARY KEY (`id`);');
         $this->_bdd->query('ALTER TABLE `reporte` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;');
+
+
+        // PROSPECTION
+
+        $this->_bdd->query("DROP TABLE IF EXISTS `prospection`;
+            CREATE TABLE IF NOT EXISTS `prospection` (
+              `id` int(10) NOT NULL AUTO_INCREMENT,
+              `Nom` varchar(255) NOT NULL,
+              `mail` varchar(300) NOT NULL,
+              `tel` varchar(10) NOT NULL,
+              `adresse` text NOT NULL,
+              `code postale` varchar(5) NOT NULL,
+              `ville` varchar(255) NOT NULL,
+              `who` int(11) NOT NULL,
+              `commentaire` text NOT NULL,
+              `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+              `update_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+              PRIMARY KEY (`id`)
+            ) ENGINE=MyISAM DEFAULT CHARSET=latin1;");
+
+        // CLIENT
+
+        $this->_bdd->query("
+        DROP TABLE IF EXISTS `client`;
+        CREATE TABLE IF NOT EXISTS `client` (
+          `id` int(11) NOT NULL AUTO_INCREMENT,
+          `nom` varchar(255) NOT NULL,
+          `prenom` varchar(255) NOT NULL,
+          `societe` varchar(255) NOT NULL,
+          `mail` varchar(255) NOT NULL,
+          `tel` varchar(10) NOT NULL,
+          `adresse` text NOT NULL,
+          `codepostal` varchar(5) NOT NULL,
+          `ville` varchar(255) NOT NULL,
+          `who` int(11) NOT NULL,
+          `commentaire` text NOT NULL,
+          `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+          PRIMARY KEY (`id`)
+        ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+        ");
+
+
+
+
+
+
+
     }
 
     public function seederTable()

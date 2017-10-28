@@ -95,7 +95,7 @@ if (!$user->isConnected()) {
 
 </div>
 
-<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+
 <?php
 require_once 'footer.php';
 ?>

@@ -1,0 +1,26 @@
+#list_client {
+  .search-box {
+    form{
+      margin-right: 30px;
+    }
+  }
+
+  .col-4 {
+    margin-bottom:20px;
+    .card {
+      padding: 20px;
+      .card-title {
+        font-family: "Saira Extra Condensed", sans-serif;
+        text-align: center;
+        font-size: 30px;
+        text-transform: uppercase;
+      }
+      .card-text{
+        text-align: center;
+        span {
+          padding-right:5px;
+        }
+      }
+    }
+  }
+}

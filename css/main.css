@@ -65,7 +65,7 @@ h1 {
     align-self: center;
     text-align: center; }
 
-#list .items .title {
+#list .items .title, #list_prospect .items .title {
   width: 100%;
   text-align: center;
   font-family: 'Saira Extra Condensed', sans-serif;
@@ -75,25 +75,88 @@ h1 {
   color: #666;
   padding-bottom: 10px; }
 
-#list .items .panel-group {
+#list .items .panel-group, #list_prospect .items .panel-group {
   width: 100%; }
-  #list .items .panel-group .content-resume {
+  #list .items .panel-group .content-resume, #list_prospect .items .panel-group .content-resume {
     background: #e3e3e3;
     padding: 10px 20px; }
-  #list .items .panel-group .panel-title {
+  #list .items .panel-group .panel-title, #list_prospect .items .panel-group .panel-title {
     display: flex;
     width: 100%;
     background: #025aa5;
     text-align: center;
     text-decoration: none;
     color: white; }
-    #list .items .panel-group .panel-title > a {
+    #list .items .panel-group .panel-title > a, #list_prospect .items .panel-group .panel-title > a {
       flex: 3;
       color: white;
       text-transform: uppercase;
       text-decoration: none;
       padding: 10px;
       border-right: 5px solid; }
-    #list .items .panel-group .panel-title > div {
+    #list .items .panel-group .panel-title > div, #list_prospect .items .panel-group .panel-title > div {
       flex: 1;
-      padding: 10px; }
+      padding: 10px;
+      cursor: pointer; }
+
+#list_prospect .panel-title .swap_client {
+  border-right: 5px solid; }
+
+#list_prospect .panel-body > div {
+  padding: 5px;
+  text-align: center; }
+  #list_prospect .panel-body > div.adresse {
+    display: flex;
+    justify-content: center;
+    padding: 14px 5px; }
+    #list_prospect .panel-body > div.adresse > div {
+      flex: 1; }
+
+#prospect .panel-title {
+  display: flex;
+  background: #025aa5; }
+  #prospect .panel-title a {
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+    padding: 10px 10px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    flex: 3;
+    border-right: 5px solid;
+    border-radius: 0; }
+  #prospect .panel-title .delete_resume {
+    flex: 1;
+    color: white;
+    align-self: center;
+    text-align: center; }
+
+#prospect .panel-body {
+  background: #e3e3e3; }
+  #prospect .panel-body > div {
+    padding: 5px;
+    text-align: center; }
+    #prospect .panel-body > div.adresse {
+      display: flex;
+      justify-content: center;
+      padding: 14px 5px; }
+      #prospect .panel-body > div.adresse > div {
+        flex: 1; }
+
+#list_client .search-box form {
+  margin-right: 30px; }
+
+#list_client .col-4 {
+  margin-bottom: 20px; }
+  #list_client .col-4 .card {
+    padding: 20px; }
+    #list_client .col-4 .card .card-title {
+      font-family: "Saira Extra Condensed", sans-serif;
+      text-align: center;
+      font-size: 30px;
+      text-transform: uppercase; }
+    #list_client .col-4 .card .card-text {
+      text-align: center; }
+      #list_client .col-4 .card .card-text span {
+        padding-right: 5px; }

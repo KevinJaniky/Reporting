@@ -1,4 +1,4 @@
-#list {
+#list , #list_prospect {
   .items {
     .title {
       width: 100%;
@@ -35,6 +35,29 @@
         >div {
           flex:1;
           padding: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+#list_prospect{
+  .panel-title {
+    .swap_client{
+      border-right: 5px solid;
+    }
+  }
+  .panel-body {
+    > div {
+      padding: 5px;
+      text-align: center;
+      &.adresse {
+        display: flex;
+        justify-content: center;
+        padding: 14px 5px;
+        >div {
+          flex: 1;
         }
       }
     }

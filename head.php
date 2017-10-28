@@ -29,7 +29,8 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="prospect.php">Prospection</a>
-                    <a class="dropdown-item" href="#">Fiche client</a>
+                    <a class="dropdown-item" href="list_prospect.php">Liste</a>
+                    <a class="dropdown-item" href="list_client.php">Fiche client</a>
                 </div>
             </li>
             <li class="nav-item">
