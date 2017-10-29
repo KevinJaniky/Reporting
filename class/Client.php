@@ -105,4 +105,18 @@ class Client
     public function modifyCom($com,$id){
         $this->_bdd->query('UPDATE client SET commentaire = "'.$com.'" WHERE id = '.$id);
     }
+
+    public function addDoc($nom,$path,$id){
+        $query = $this->_bdd->prepare('INSERT INTO documents (nom,path,client) VALUES (:nom,:path,:id)');
+        $query->execute([
+           'nom'=>$nom,
+            'path'=>$path,
+            'id'=>$id
+        ]);
+    }
+
+    public function readDoc($id){
+        $query = $this->_bdd->query('SELECT * FROM documents WHERE client ='.$id);
+        return $query->fetchAll();
+    }
 }

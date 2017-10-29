@@ -170,10 +170,31 @@ h1 {
       color: #0275d8; }
 
 #client .info_client {
-  display: none; }
+  display: block; }
 
 #client .info_client_commentaire {
   display: none; }
 
 #client .info_client_documents {
-  display: block; }
+  display: none; }
+  #client .info_client_documents .file_to_upload {
+    display: flex;
+    padding: 20px; }
+    #client .info_client_documents .file_to_upload .item {
+      padding: 10px;
+      max-width: 210px;
+      min-width: 200px; }
+      #client .info_client_documents .file_to_upload .item img {
+        width: 39%; }
+      #client .info_client_documents .file_to_upload .item .name-file {
+        width: 100px;
+        word-wrap: break-word;
+        font-size: 11px;
+        padding: 10px 0; }
+  #client .info_client_documents .form-custom {
+    border: 2px solid #e1e1e1;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px; }
+    #client .info_client_documents .form-custom input {
+      margin: auto; }

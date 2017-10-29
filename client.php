@@ -92,19 +92,35 @@ if (isset($_GET['id'])) {
                     <textarea class="form-control" name="com" id="com"
                               rows="5" data-id="<?php echo $_GET['id'] ?>"><?= $data['commentaire'] ?></textarea>
                 </div>
-
             </form>
         </div>
-        <div class="info_client_documents">
-            <form method="post" action="add_file.php" enctype="multipart/form-data">
+        <div class="info_client_documents marginTop">
+            <form method="post" action="add_file.php" enctype="multipart/form-data" class="marginTop form-custom">
                 <div class="form-group">
                     <input type="file" class="form-control-file" name="doc" id="doc" placeholder="Ajouter un document"
                            aria-describedby="doc">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="284377200" />
+                    <input type="hidden" name="MAX_FILE_SIZE" value="284377200"/>
                     <small id="doc" class="form-text text-muted">Ajouter un document</small>
                 </div>
+                <input type="hidden" value="<?php echo $_GET['id'] ?>" name="id">
                 <input type="submit" value="Ajouter" class="btn btn-info">
             </form>
+            <div class="file_to_upload">
+                <?php
+                $docs = $client->readDoc($_GET['id']);
+                $count = count($docs);
+                for ($i = 0; $i < $count; $i++) {
+                    ?>
+                    <div class="item">
+                        <img src="media/file-info-icon.png" alt="File icone">
+                        <div class="name-file"><?= $docs[$i]['nom'] ?></div>
+                        <a href="<?= $docs[$i]['path'] ?>" class="dl-file btn btn-warning btn-sm" download>Download</a>
+                    </div>
+
+                    <?php
+                }
+                ?>
+            </div>
         </div>
     </div>
 </div>

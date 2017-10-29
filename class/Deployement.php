@@ -106,6 +106,21 @@ class Deployement
         ");
 
 
+        // DOCUMENTS
+
+        $this->_bdd->query("
+           DROP TABLE IF EXISTS `documents`;
+           CREATE TABLE IF NOT EXISTS `documents` (
+          `id` int(11) NOT NULL AUTO_INCREMENT,
+          `nom` varchar(255) NOT NULL,
+          `path` varchar(255) NOT NULL,
+          `client` int(11) NOT NULL,
+          `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+          PRIMARY KEY (`id`)
+        ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+        ");
+
+
 
 
 

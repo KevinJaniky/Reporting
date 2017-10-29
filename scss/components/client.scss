@@ -12,12 +12,40 @@
     }
   }
   .info_client {
-    display: none;
+    display: block;
   }
   .info_client_commentaire {
     display: none;
   }
   .info_client_documents {
-    display: block;
+    display: none;
+
+    .file_to_upload {
+      display: flex;
+      padding:20px;
+      .item {
+        padding: 10px;
+        max-width: 210px;
+        min-width: 200px;
+        img{
+          width: 39%;
+        }
+        .name-file{
+          width: 100px;
+          word-wrap: break-word;
+          font-size: 11px;
+          padding: 10px 0;
+        }
+      }
+    }
+    .form-custom {
+      border: 2px solid #e1e1e1;
+      text-align: center;
+      padding: 20px;
+      border-radius: 5px;
+      input {
+        margin: auto;
+      }
+    }
   }
 }
