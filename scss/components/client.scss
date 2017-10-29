@@ -1,0 +1,23 @@
+#client {
+  .nav-client {
+    > div {
+      display: flex;
+      > div {
+        cursor: pointer;
+        padding-right: 5px;
+        &:hover {
+          color: #0275d8;
+        }
+      }
+    }
+  }
+  .info_client {
+    display: none;
+  }
+  .info_client_commentaire {
+    display: none;
+  }
+  .info_client_documents {
+    display: block;
+  }
+}

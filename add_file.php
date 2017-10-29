@@ -1,4 +1,6 @@
 <?php
 
 require_once 'autoload.php';
-phpinfo();
+
+
+    var_dump($_FILES['doc']);

@@ -44,23 +44,65 @@ class Client
         return false;
     }
 
-    public function readAll(){
+    public function readAll()
+    {
         $query = $this->_bdd->query('SELECT * FROM client');
         return $query->fetchAll();
     }
 
-    public function findId($mail){
-        $query = $this->_bdd->query('SELECT id FROM client WHERE mail = "'.$mail.'"');
+    public function findId($mail)
+    {
+        $query = $this->_bdd->query('SELECT id FROM client WHERE mail = "' . $mail . '"');
         return $query->fetch();
     }
 
-    public function search($val){
+    public function search($val)
+    {
         $query = $this->_bdd->query("
-            SELECT * FROM client WHERE societe LIKE '".$val."%'
+            SELECT * FROM client WHERE societe LIKE '" . $val . "%'
             UNION
-            SELECT * FROM client WHERE nom LIKE '".$val."%'
+            SELECT * FROM client WHERE nom LIKE '" . $val . "%'
             UNION
-            SELECT * FROM client WHERE prenom LIKE '".$val."'; ");
+            SELECT * FROM client WHERE prenom LIKE '" . $val . "'; ");
         return $query->fetchAll();
+    }
+
+    public function readOne($id)
+    {
+        $query = $this->_bdd->query('SELECT * FROM client WHERE id = ' . $id);
+        $data = $query->fetch();
+        if (!empty($data)) {
+            return $data;
+        }
+        return false;
+    }
+
+    public function modify($data)
+    {
+        $query = $this->_bdd->prepare('UPDATE client SET 
+          nom = :nom,
+          prenom = :prenom,
+          societe = :societe,
+          mail = :mail,
+          tel = :tel,
+          adresse = :adresse,
+          codepostal = :cp,
+          ville = :ville
+          WHERE id = :id');
+        $query->execute([
+            'nom' => $data['nom'],
+            'prenom' => $data['prenom'],
+            'societe' => $data['societe'],
+            'mail' => $data['mail'],
+            'tel' => $data['tel'],
+            'adresse' => $data['adresse'],
+            'cp' => $data['cp'],
+            'ville' => $data['ville'],
+            'id' => $data['id']
+        ]);
+    }
+
+    public function modifyCom($com,$id){
+        $this->_bdd->query('UPDATE client SET commentaire = "'.$com.'" WHERE id = '.$id);
     }
 }

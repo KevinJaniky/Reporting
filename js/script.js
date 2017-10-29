@@ -6,6 +6,9 @@ $(document).ready(function () {
     if ($('#prospect').length > 0) {
         CKEDITOR.replace("com");
     }
+    if ($('#client').length > 0) {
+        CKEDITOR.replace("com");
+    }
 
     if ($('#dashboard').length > 0) {
         $('.delete_resume').click(function () {
@@ -101,6 +104,55 @@ $(document).ready(function () {
                 }
             });
         })
+    }
+
+    if($('#client').length > 0 ){
+        $('.info_client input , .info_client textarea').on('change paste keyup',function () {
+        var donnee = $('#form_client').serialize();
+            $.ajax({
+                url: 'modify_client.php',
+                type: 'POST',
+                data: donnee,
+                dataType: 'json',
+                success: function (data) {
+                    $('h1').text(data);
+                }
+            });
+        });
+        CKEDITOR.instances['com'].on('change', function() {
+            var text = CKEDITOR.instances['com'].getData();
+            var id = $('.info_client_commentaire textarea').data();
+            id = id['id'];
+            $.ajax({
+                url: 'modify_client_commentaire.php',
+                type: 'POST',
+                data: 'text='+text+'&id='+id,
+                dataType: 'JSON',
+                success: function (data) {
+                }
+            });
+        });
+
+
+        $('#client .nav-client #general').click(function () {
+            $('.element_navigation > div').each(function () {
+               $(this).hide();
+            });
+            $('.element_navigation .info_client').show();
+        });
+        $('#client .nav-client #commentaires').click(function () {
+            $('.element_navigation > div').each(function () {
+               $(this).hide();
+            });
+            $('.element_navigation .info_client_commentaire').show();
+        });
+        $('#client .nav-client #documents').click(function () {
+            $('.element_navigation > div').each(function () {
+               $(this).hide();
+            });
+            $('.element_navigation .info_client_documents').show();
+        });
+
     }
 
 });

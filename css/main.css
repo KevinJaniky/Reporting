@@ -160,3 +160,20 @@ h1 {
       text-align: center; }
       #list_client .col-4 .card .card-text span {
         padding-right: 5px; }
+
+#client .nav-client > div {
+  display: flex; }
+  #client .nav-client > div > div {
+    cursor: pointer;
+    padding-right: 5px; }
+    #client .nav-client > div > div:hover {
+      color: #0275d8; }
+
+#client .info_client {
+  display: none; }
+
+#client .info_client_commentaire {
+  display: none; }
+
+#client .info_client_documents {
+  display: block; }
